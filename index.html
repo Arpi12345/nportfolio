@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arpita Raj | Full Stack Web Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Open+Sans:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#02070d;--panel:#07141f;--line:#12384f;--cyan:#22c8ff;--aws:#ff9900;--text:#e8f3fa;--mute:#8fa8b8;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:400 17px/1.6 "Open Sans",system-ui,sans-serif}
+h1,h2,h3,.nav a{font-family:"Fugaz One",Impact,sans-serif}
+nav{position:sticky;top:0;z-index:5;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:12px;background:rgba(2,7,13,.85);backdrop-filter:blur(8px)}
+.nav a{color:var(--cyan);text-decoration:none;padding:6px 16px;border:1px solid var(--line);border-radius:999px;font-style:italic;font-weight:700;box-shadow:0 0 14px rgba(34,200,255,.15)}
+.nav a:hover,.nav a:focus-visible{outline:2px solid var(--cyan);background:var(--panel)}
+section{max-width:1000px;margin:0 auto;padding:80px 22px}
+.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:radial-gradient(circle at 50% 40%,rgba(34,200,255,.28),transparent 55%)}
+.hero p{margin:0;font:italic 700 1.5rem "Fugaz One"}
+.hero h1{margin:4px 0;font-size:clamp(3.6rem,15vw,9rem);line-height:1;font-style:italic;color:var(--cyan);text-shadow:0 0 40px rgba(34,200,255,.5);animation:rise 1s ease both}
+.role{font:italic 700 clamp(1.1rem,3.5vw,1.8rem) "Fugaz One";color:var(--text)}
+.role b{color:var(--aws)}
+.tag{max-width:560px;color:var(--mute);margin:18px 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.btn{padding:11px 22px;border-radius:10px;border:1px solid var(--cyan);color:var(--cyan);text-decoration:none;font-weight:500;background:var(--panel);box-shadow:0 0 18px rgba(34,200,255,.2)}
+.btn.main{background:var(--cyan);color:#02222f}
+.btn:focus-visible{outline:2px solid var(--aws);outline-offset:2px}
+.big{font:italic 700 clamp(2.6rem,9vw,5.5rem)/.95 "Fugaz One";margin:0 0 36px}
+.big span{display:block;color:transparent;-webkit-text-stroke:2px var(--cyan);margin:-.28em 0 0 .9em}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card h3{margin:0 0 10px;color:var(--cyan);font-style:italic}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips i{font-style:normal;font-size:.92rem;padding:4px 12px;border:1px solid var(--line);border-radius:8px;background:#0a1c2a}
+.chips.aws i{border-color:var(--aws);color:var(--aws)}
+.tl{border-left:2px solid var(--cyan);margin-left:8px;padding-left:24px}
+.tl div{margin-bottom:26px;position:relative}
+.tl div::before{content:"";position:absolute;left:-33px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--cyan)}
+.tl h3{margin:0;font-size:1.25rem}
+.tl small{color:var(--cyan);letter-spacing:.04em}
+ul{padding-left:20px;margin:10px 0 0;color:var(--mute)}
+a.link{color:var(--cyan)}
+footer{text-align:center;color:var(--mute);padding:30px 22px 50px}
+.hero,#skills{background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='56' height='100'><path d='M28 66L0 50V16L28 0l28 16v34zM28 100V66M0 50v34l28 16M56 50v34L28 100' fill='none' stroke='%2322c8ff' stroke-opacity='.13'/></svg>")}
+.hero{background-image:radial-gradient(circle at 50% 40%,rgba(34,200,255,.28),transparent 55%),url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='56' height='100'><path d='M28 66L0 50V16L28 0l28 16v34zM28 100V66M0 50v34l28 16M56 50v34L28 100' fill='none' stroke='%2322c8ff' stroke-opacity='.13'/></svg>")}
+.hero h1{position:relative;clip-path:inset(-1.2em 0 -.3em 0);padding:0 .1em;color:#1fc3ff;font-size:clamp(3rem,10vw,7rem)}
+.hover-text span{display:inline-block;position:relative;transition:transform .2s;transition-delay:var(--delay,0s)}
+.hover-text:hover span{transform:translateY(-100%)}
+.hero h1::after{content:"";position:absolute;top:48%;left:0;width:45%;height:7px;background:linear-gradient(90deg,transparent,#fff,transparent);animation:sweep 4s ease-in-out infinite}
+.js .big{opacity:0;transform:translateX(-70px);transition:opacity .7s,transform .7s}
+.js .big.in{opacity:1;transform:none}
+.card,.btn{transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-3px);box-shadow:0 0 26px rgba(34,200,255,.18)}
+#skills{position:relative;max-width:none;padding-inline:max(22px,calc(50% - 500px));overflow:hidden}
+#skills::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='56' height='100'><path d='M28 66L0 50V16L28 0l28 16v34zM28 100V66M0 50v34l28 16M56 50v34L28 100' fill='none' stroke='%2322c8ff' stroke-opacity='.75' stroke-width='1.5'/></svg>");-webkit-mask-image:radial-gradient(circle 190px at var(--mx,-999px) var(--my,-999px),#000,transparent);mask-image:radial-gradient(circle 190px at var(--mx,-999px) var(--my,-999px),#000,transparent)}
+.stack{position:relative;display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:end}
+.stack .big{margin:0;text-align:right}
+.stack .big span{margin:-.28em 0 0 auto}
+.tiles h4{margin:24px 0 12px;text-align:center;font:500 .95rem "Open Sans",sans-serif}
+.tiles h4:first-child{margin-top:0}
+.row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.tile{width:76px;text-align:center;font-size:.72rem;color:var(--mute)}
+.tile b{display:grid;place-items:center;width:64px;height:64px;margin:0 auto 6px;border-radius:12px;background:#0a1c2a;border:1px solid var(--line);color:var(--cyan);font:700 .95rem "Fugaz One",sans-serif;box-shadow:0 0 16px rgba(34,200,255,.18)}
+.aws .tile b{color:var(--aws);border-color:#6b4508;box-shadow:0 0 16px rgba(255,153,0,.22)}
+@media (max-width:760px){.stack{grid-template-columns:1fr}.stack .big{order:-1;text-align:left}.stack .big span{margin-left:.9em}}
+.tile b svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.tile{position:relative;width:64px}
+.tile b{margin:0;transition:transform .2s,box-shadow .2s}
+.tile:hover b,.tile:focus-visible b{transform:translateY(-3px);box-shadow:0 0 24px rgba(34,200,255,.5)}
+.tile:focus-visible{outline:none}
+.tile::after{content:attr(data-n);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translate(-50%,6px);background:#e8f3fa;color:#02070d;font:italic 700 .8rem "Fugaz One",sans-serif;padding:4px 14px;border-radius:999px;white-space:nowrap;opacity:0;pointer-events:none;transition:.2s;z-index:3}
+.tile:hover::after,.tile:focus-visible::after{opacity:1;transform:translate(-50%,0)}
+.thumb{height:120px;border-radius:10px;background:linear-gradient(135deg,#0c3248,#06121c);display:grid;place-items:center;font:italic 700 2.2rem "Fugaz One";color:var(--cyan);border:1px solid var(--line);margin-bottom:14px}
+.soc{display:flex;gap:12px;margin-top:26px}
+.soc a{width:52px;height:52px;display:grid;place-items:center;border-radius:12px;background:var(--panel);border:1px solid var(--line);color:var(--cyan);box-shadow:0 0 16px rgba(34,200,255,.2)}
+.soc svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+form label{display:block;margin-bottom:12px;color:var(--mute);font-size:.9rem}
+form input,form textarea{display:block;width:100%;margin-top:4px;padding:10px;border-radius:8px;border:1px solid var(--line);background:#0a1c2a;color:var(--text);font:inherit}
+.tl+.grid{margin-top:26px}
+button.btn{cursor:pointer;font:inherit}
+.prog{position:fixed;right:0;top:0;width:4px;height:100%;background:linear-gradient(var(--cyan),rgba(34,200,255,.2));transform-origin:top;transform:scaleY(var(--p,0));z-index:8;box-shadow:0 0 12px var(--cyan)}
+.ribbon{position:fixed;top:30px;right:-46px;transform:rotate(45deg);width:200px;text-align:center;padding:6px 0;background:#0b2a22;border:1px solid #1f6f55;color:#7ff3c8;font:italic 700 .8rem "Fugaz One",sans-serif;text-decoration:none;z-index:7;box-shadow:0 0 16px rgba(60,255,180,.2)}
+@media (max-width:640px){.ribbon{display:none}}
+.hero{min-height:100vh}
+.big{font-size:clamp(3rem,9vw,7rem);font-weight:400}
+.big span{font-size:1.3em;margin:-.2em 0 0 .6em}
+.stack .big{font-size:clamp(2.4rem,6vw,4.6rem)}
+.stack .big span{margin:-.2em 0 0 auto}
+h1,h2,h3,.nav a,.role,.hero p{font-weight:400}
+@media (hover:hover) and (pointer:fine){*{cursor:none!important}}
+@keyframes sweep{from{transform:translateX(-120%)}to{transform:translateX(260%)}}
+@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Sections"><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#achievements">Achievements</a><a href="#contact">Contact</a></nav>
+<div class="prog" aria-hidden="true"></div>
+<a class="ribbon" href="https://github.com/Arpi12345">★ Follow on GitHub</a>
+<section class="hero" id="top">
+<p>Hi, I’m</p>
+<h1 class="hover-text">ARPITA RAJ</h1>
+<div class="role">Full Stack Web Developer</div>
+<div class="tag">Building responsive websites, interactive user interfaces and practical web applications.</div>
+<div class="btns"><a class="btn main" href="#projects">View Projects</a><a class="btn" href="#" download>Download Resume</a><a class="btn" href="#contact">Contact Me</a></div>
+<div class="soc"><a href="https://github.com/Arpi12345" aria-label="GitHub"><svg><use href="#i-gh"/></svg></a><a href="https://www.linkedin.com/in/arpita-raj-031125289" aria-label="LinkedIn"><svg><use href="#i-in"/></svg></a><a href="mailto:arpi59815@gmail.com" aria-label="Email"><svg><use href="#i-mail"/></svg></a></div>
+</section>
+<section id="about">
+<h2 class="big">ABOUT <span>ME</span></h2>
+<div class="card"><p style="margin:0 0 12px">I’m a BCA graduate and Full Stack Web Developer who enjoys turning ideas into fast, responsive and easy-to-use websites. I completed a 3-month Web Development Internship at ACP IT Zone, where I developed four business websites, and I’ve trained in Full Stack Development.</p><p style="margin:0">I’ve also earned 18+ Google Cloud Skills Boost badges and I’m always learning something new.</p></div>
+</section>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-ec2" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="1.5"/><path d="M9 3v3M12 3v3M15 3v3M9 18v3M12 18v3M15 18v3M3 9h3M3 12h3M3 15h3M18 9h3M18 12h3M18 15h3"/></symbol>
+<symbol id="i-s3" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6l2 13c.3 1.2 3 2 6 2s5.7-.8 6-2l2-13"/></symbol>
+<symbol id="i-iam" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><circle cx="12" cy="10" r="2"/><path d="M8.5 16c.8-2 2-2.5 3.5-2.5s2.7.5 3.5 2.5"/></symbol>
+<symbol id="i-vpc" viewBox="0 0 24 24"><path d="M7 18a4 4 0 0 1-.5-8A6 6 0 0 1 18 9a4.5 4.5 0 0 1 0 9z"/><rect x="10" y="12" width="4" height="3"/></symbol>
+<symbol id="i-cw" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M6 14l3-3 3 2 5-5"/></symbol>
+<symbol id="i-linux" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3M12 16h5"/></symbol>
+<symbol id="i-win" viewBox="0 0 24 24"><path d="M3 5l8-1v8H3zM12 3.8L21 2.5V12h-9zM3 13h8v8l-8-1zM12 13h9v9.5l-9-1.3z" fill="#3aa0ff" stroke="none"/></symbol>
+<symbol id="i-tcp" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M11 7.2L6 16.8M13 7.2l5 9.6M7.5 19h9"/></symbol>
+<symbol id="i-dns" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></symbol>
+<symbol id="i-http" viewBox="0 0 24 24"><path d="M4 8h14l-3-3M20 16H6l3 3"/></symbol>
+<symbol id="i-ssh" viewBox="0 0 24 24"><circle cx="8" cy="12" r="4"/><path d="M12 12h9M18 12v3M21 12v2"/></symbol>
+<symbol id="i-js" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" fill="#f7df1e" stroke="none"/><text x="12" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#111" stroke="none" font-family="sans-serif">JS</text></symbol>
+<symbol id="i-html" viewBox="0 0 24 24"><path d="M4 3h16l-1.5 16L12 21l-6.5-2z" fill="#e44d26" stroke="none"/><text x="12" y="16" text-anchor="middle" font-size="10" font-weight="700" fill="#fff" stroke="none" font-family="sans-serif">5</text></symbol>
+<symbol id="i-css" viewBox="0 0 24 24"><path d="M4 3h16l-1.5 16L12 21l-6.5-2z" fill="#2965f1" stroke="none"/><text x="12" y="16" text-anchor="middle" font-size="10" font-weight="700" fill="#fff" stroke="none" font-family="sans-serif">3</text></symbol>
+<symbol id="i-sql" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3 3 7 3s7-1.3 7-3"/></symbol>
+<symbol id="i-react" viewBox="0 0 24 24"><g stroke="#61dafb"><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></g><circle cx="12" cy="12" r="1.8" fill="#61dafb" stroke="none"/></symbol>
+<symbol id="i-node" viewBox="0 0 24 24"><path d="M12 2l8.5 5v10L12 22l-8.5-5V7z" stroke="#6cc24a"/><text x="12" y="15.5" text-anchor="middle" font-size="8" font-weight="700" fill="#6cc24a" stroke="none" font-family="sans-serif">JS</text></symbol>
+<symbol id="i-ex" viewBox="0 0 24 24"><text x="12" y="16" text-anchor="middle" font-size="13" fill="#e8f3fa" stroke="none" font-family="sans-serif">ex</text></symbol>
+<symbol id="i-mongo" viewBox="0 0 24 24"><path d="M12 2c3.5 4 5 7 5 11a5 5 0 0 1-10 0c0-4 1.5-7 5-11zM12 14v8" stroke="#47a248" fill="#47a24833"/></symbol>
+<symbol id="i-mysql" viewBox="0 0 24 24"><g stroke="#4aa3df"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3 3 7 3s7-1.3 7-3"/></g></symbol>
+<symbol id="i-git" viewBox="0 0 24 24"><g stroke="#f05032"><path d="M12 2l10 10-10 10L2 12z"/><path d="M9 11.5V15M10.5 10l3 4"/></g><g fill="#f05032" stroke="none"><circle cx="9" cy="10" r="1.5"/><circle cx="14" cy="15" r="1.5"/><circle cx="9" cy="15.500" r="1.5"/></g></symbol>
+<symbol id="i-gh" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
+<symbol id="i-vs" viewBox="0 0 24 24"><g stroke="#2f9bf0"><path d="M17 2l5 2.5v15L17 22 7 13l-4 3-1-1V9l1-1 4 3z"/><path d="M17 2v20M7 11l10-8"/></g></symbol>
+<symbol id="i-pm" viewBox="0 0 24 24"><g stroke="#ff6c37"><circle cx="12" cy="12" r="9"/><path d="M8 16l7-7M12 8l4 .5.5 4"/></g></symbol>
+<symbol id="i-in" viewBox="0 0 24 24"><path d="M4 9v11M4 4.5v.5M9 20v-7a3.500 3.500 0 0 1 7 0v7M9 9v11"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+<symbol id="i-php" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="6" fill="#7a86b8" stroke="none"/><text x="12" y="15" text-anchor="middle" font-size="8" font-weight="700" fill="#111" stroke="none" font-family="sans-serif">php</text></symbol>
+<symbol id="i-bs" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4" fill="#7952b3" stroke="none"/><text x="12" y="17" text-anchor="middle" font-size="12" font-weight="700" fill="#fff" stroke="none" font-family="sans-serif">B</text></symbol>
+</defs></svg>
+<section id="skills">
+<div class="stack">
+<div class="tiles"><h4>Frontend</h4><div class="row"><span class="tile" tabindex="0" data-n="HTML5"><b><svg><use href="#i-html"/></svg></b></span><span class="tile" tabindex="0" data-n="CSS3"><b><svg><use href="#i-css"/></svg></b></span><span class="tile" tabindex="0" data-n="JavaScript"><b><svg><use href="#i-js"/></svg></b></span><span class="tile" tabindex="0" data-n="React.js"><b><svg><use href="#i-react"/></svg></b></span><span class="tile" tabindex="0" data-n="Bootstrap"><b><svg><use href="#i-bs"/></svg></b></span></div><h4>Backend</h4><div class="row"><span class="tile" tabindex="0" data-n="PHP"><b><svg><use href="#i-php"/></svg></b></span><span class="tile" tabindex="0" data-n="Node.js"><b><svg><use href="#i-node"/></svg></b></span><span class="tile" tabindex="0" data-n="Express.js"><b><svg><use href="#i-ex"/></svg></b></span></div><h4>Database</h4><div class="row"><span class="tile" tabindex="0" data-n="MongoDB"><b><svg><use href="#i-mongo"/></svg></b></span><span class="tile" tabindex="0" data-n="MySQL"><b><svg><use href="#i-mysql"/></svg></b></span><span class="tile" tabindex="0" data-n="SQL"><b><svg><use href="#i-sql"/></svg></b></span></div><h4>Tools</h4><div class="row"><span class="tile" tabindex="0" data-n="Git"><b><svg><use href="#i-git"/></svg></b></span><span class="tile" tabindex="0" data-n="GitHub"><b><svg><use href="#i-gh"/></svg></b></span><span class="tile" tabindex="0" data-n="Postman"><b><svg><use href="#i-pm"/></svg></b></span><span class="tile" tabindex="0" data-n="VS Code"><b><svg><use href="#i-vs"/></svg></b></span></div></div>
+<h2 class="big">TECH <span>STACK</span></h2>
+</div>
+</section>
+<section id="experience">
+<h2 class="big">EXPERI<span>ENCE</span></h2>
+<div class="tl"><div><h3>Web Development Intern</h3><small>ACP IT ZONE | 3 MONTHS</small><ul><li>Developed and worked on four real-world website projects, shown below.</li><li>Created responsive pages using HTML, CSS, JavaScript and Bootstrap, and worked with PHP.</li><li>Improved layouts, content presentation and UI components, and gained hands-on experience in debugging and responsive design.</li></ul></div></div>
+<div class="grid"><div class="card"><div class="thumb">AN</div><h3>ACP News Live</h3><p style="margin:0 0 10px;color:var(--mute)">Live website developed during the internship.</p><div class="chips" style="margin-bottom:14px"><i>HTML</i><i>CSS</i><i>JavaScript</i><i>Bootstrap</i><i>PHP</i></div><a class="btn" href="https://acpnewslive.in/" target="_blank" rel="noopener">Live website</a></div><div class="card"><div class="thumb">ME</div><h3>Meenakshi Enterprises</h3><p style="margin:0 0 10px;color:var(--mute)">Business website developed during the internship.</p><div class="chips" style="margin-bottom:14px"><i>HTML</i><i>CSS</i><i>JavaScript</i><i>Bootstrap</i><i>PHP</i></div><a class="btn" href="https://meenakshienterprises.in/" target="_blank" rel="noopener">Live website</a></div><div class="card"><div class="thumb">HI</div><h3>House of Ivory India</h3><p style="margin:0 0 10px;color:var(--mute)">Business website developed during the internship.</p><div class="chips" style="margin-bottom:14px"><i>HTML</i><i>CSS</i><i>JavaScript</i><i>Bootstrap</i><i>PHP</i></div><a class="btn" href="https://houseofivoryindia.com/mompl/" target="_blank" rel="noopener">Live website</a></div><div class="card"><div class="thumb">MS</div><h3>Meenakshi Enterprises Saraswati</h3><p style="margin:0 0 10px;color:var(--mute)">Website for the Saraswati page of Meenakshi Enterprises.</p><div class="chips" style="margin-bottom:14px"><i>HTML</i><i>CSS</i><i>JavaScript</i><i>Bootstrap</i><i>PHP</i></div><a class="btn" href="https://meenakshienterprises.in/saraswati/" target="_blank" rel="noopener">Live website</a></div></div>
+</section>
+<section id="projects">
+<h2 class="big">FEATURED <span>PROJECTS</span></h2>
+<div class="grid"><div class="card"><div class="thumb">ZC</div><h3>Zerodha Clone</h3><p style="margin:0 0 10px;color:var(--mute)">Trading dashboard clone with login and REST APIs.</p><div class="chips" style="margin-bottom:14px"><i>MongoDB</i><i>Express</i><i>React</i><i>Node.js</i></div><a class="btn" href="#">Live demo</a> <a class="btn" href="https://github.com/Arpi12345">GitHub</a></div><div class="card"><div class="thumb">W</div><h3>Wanderlust</h3><p style="margin:0 0 10px;color:var(--mute)">Travel and stay listing web application.</p><div class="chips" style="margin-bottom:14px"><i>Node.js</i><i>Express</i><i>MongoDB</i></div><a class="btn" href="#">Live demo</a> <a class="btn" href="https://github.com/Arpi12345">GitHub</a></div><div class="card"><div class="thumb">WA</div><h3>Weather Application</h3><p style="margin:0 0 10px;color:var(--mute)">Search any city and see its current weather.</p><div class="chips" style="margin-bottom:14px"><i>JavaScript</i><i>API</i></div><a class="btn" href="#">Live demo</a> <a class="btn" href="https://github.com/Arpi12345">GitHub</a></div><div class="card"><div class="thumb">IF</div><h3>Image Finder</h3><p style="margin:0 0 10px;color:var(--mute)">Search and browse images from an online API.</p><div class="chips" style="margin-bottom:14px"><i>JavaScript</i><i>API</i></div><a class="btn" href="#">Live demo</a> <a class="btn" href="https://github.com/Arpi12345">GitHub</a></div></div>
+</section>
+<section id="achievements">
+<h2 class="big">ACHIEVE<span>MENTS</span></h2>
+<div class="grid"><div class="card"><h3>18+ badges</h3><p style="margin:0;color:var(--mute)">Google Cloud Skills Boost</p></div><div class="card"><h3>Full Stack</h3><p style="margin:0;color:var(--mute)">Development training</p></div><div class="card"><h3>DSA</h3><p style="margin:0;color:var(--mute)">Data Structures and Algorithms training</p></div><div class="card"><h3>Certifications</h3><p style="margin:0;color:var(--mute)">Relevant technical certifications</p></div></div>
+</section>
+<section id="contact">
+<h2 class="big">LET’S <span>TALK</span></h2>
+<div class="grid"><div class="card"><h3>Reach me</h3><p style="margin:0 0 14px"><a class="link" href="mailto:arpi59815@gmail.com">arpi59815@gmail.com</a></p><div class="btns" style="justify-content:flex-start"><a class="btn" href="https://github.com/Arpi12345">GitHub</a><a class="btn" href="https://www.linkedin.com/in/arpita-raj-031125289">LinkedIn</a></div></div>
+<form class="card" id="cf"><label>Name<input name="n" required></label><label>Email<input name="e" type="email" required></label><label>Message<textarea name="m" rows="4" required></textarea></label><button class="btn main" type="submit">Send message</button></form></div>
+</section>
+<footer>© Arpita Raj. All rights reserved.</footer>
+<script>
+document.documentElement.classList.add('js');
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.3});
+document.querySelectorAll('.big').forEach(function(el){io.observe(el)});
+(function(){
+if(matchMedia('(prefers-reduced-motion:reduce)').matches||matchMedia('(hover:none)').matches)return;
+var c=document.createElement('canvas');c.setAttribute('aria-hidden','true');c.style.cssText='position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9';document.body.appendChild(c);
+var x=c.getContext('2d'),pts=[],W,H,m=null;
+function rs(){var d=devicePixelRatio||1;W=innerWidth;H=innerHeight;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0)}
+rs();addEventListener('resize',rs);
+addEventListener('mousemove',function(e){m={x:e.clientX,y:e.clientY};pts.push({x:e.clientX,y:e.clientY,t:performance.now()})});
+function f(n){x.clearRect(0,0,W,H);pts=pts.filter(function(p){return n-p.t<700});
+x.lineCap='round';x.shadowColor='#22c8ff';x.shadowBlur=12;for(var i=1;i<pts.length;i++){var a=1-(n-pts[i].t)/700;x.beginPath();x.moveTo(pts[i-1].x,pts[i-1].y);x.lineTo(pts[i].x,pts[i].y);x.lineWidth=1+8*a;x.strokeStyle='rgba(255,255,255,'+(a*.95)+')';x.stroke()}
+if(m){x.beginPath();x.arc(m.x,m.y,5,0,6.283);x.fillStyle='#fff';x.fill()}
+requestAnimationFrame(f)}
+requestAnimationFrame(f)})();
+var sk=document.getElementById('skills');
+addEventListener('mousemove',function(e){var r=sk.getBoundingClientRect();sk.style.setProperty('--mx',(e.clientX-r.left)+'px');sk.style.setProperty('--my',(e.clientY-r.top)+'px')});
+</script>
+<script>
+document.querySelectorAll('.hover-text').forEach(function(h){var t=h.textContent;h.textContent='';h.setAttribute('aria-label',t);Array.from(t).forEach(function(c,i){var s=document.createElement('span');s.textContent=c===' '?String.fromCharCode(160):c;s.setAttribute('aria-hidden','true');s.style.setProperty('--delay',(i*0.05)+'s');h.appendChild(s)})});
+var pg=document.querySelector('.prog');function up(){var h=document.documentElement.scrollHeight-innerHeight;pg.style.setProperty('--p',h>0?scrollY/h:0)}addEventListener('scroll',up);up();
+document.getElementById('cf').addEventListener('submit',function(e){e.preventDefault();var f=e.target;location.href='mailto:arpi59815@gmail.com?subject='+encodeURIComponent('Portfolio message from '+f.n.value)+'&body='+encodeURIComponent(f.m.value+'\n\n'+f.n.value+' ('+f.e.value+')')});
+</script>
+</body>
+</html>
